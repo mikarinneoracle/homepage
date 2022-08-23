@@ -9,7 +9,7 @@ import { Free } from './free';
 @Injectable({ providedIn: 'root' })
 export class FreeSvc {
 
-  private freeUrl = 'http://localhost:3010/free';  // URL to web api
+  private freeUrl = 'http://price:3010/free';  // URL to web api
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
