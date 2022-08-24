@@ -2,10 +2,16 @@ FROM node:16.16.0
 
 WORKDIR /app
 
+EXPOSE 4200
+
 COPY ["package.json", "package-lock.json*", "./"]
 
 RUN npm install
 
+RUN npm install @angular/cli
+
 COPY . .
 
-CMD [ "ng", "serve" ]
+RUN ng analytics off --global
+
+CMD ng serve --host 0.0.0.0 --disable-host-check
