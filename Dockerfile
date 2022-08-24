@@ -1,10 +1,14 @@
 FROM node:16.16.0
 
+EXPOSE 4200
+
 WORKDIR /app
 
 EXPOSE 4200
 
 COPY ["package.json", "package-lock.json*", "./"]
+
+RUN npm install -g @angular/cli  
 
 RUN npm install
 
